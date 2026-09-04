@@ -1,0 +1,16 @@
+{
+  "name": "express-blog-intro",
+  "version": "0.0.1",
+  "description": "esercizio boolean",
+  "license": "ISC",
+  "author": "Loicq Avoutia",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
