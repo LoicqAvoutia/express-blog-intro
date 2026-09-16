@@ -53,5 +53,16 @@ export const postdb = [
             'tranquillo',
             'splendido'
         ]
+    },
+    {
+        "id": "6",
+        "titolo": "titolo1",
+        "contenuto": "contenuto1",
+        "immagine": "../public/img/20760.jpg",
+        "tags":[
+            "bello",
+            "tranquillo",
+            "splendido"
+        ]
     }
 ]
