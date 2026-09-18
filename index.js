@@ -96,9 +96,17 @@ Bonus
 Quelli del giorno prima, se non già fatti
 In Update, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
 
+Esercizio 5
+Dopo aver completato tutte le operazioni CRUD, completiamo le nostre API inserendo un middleware per la gestione delle rotte non registrate e uno per la gestione degli errori.
+
+Se viene chiamato un endpoint inesistente, un middleware dovrà rispondere un messaggio e uno status appropriato.
+Se viene generato un errore, un middleware si occuperà di rispondere con un messaggio e uno status appropriato.
+
 */
 import express from "express";
 import { router } from "./routers.js";
+import { errorhandler } from "./middlewears/error.js";
+import { notfound } from "./middlewears/404.js";
 
 const app = express();
 const PORT = 3000;
@@ -106,6 +114,8 @@ const PORT = 3000;
 app.use(express.static('public'));
 app.use(express.json());
 app.use("/bacheca", router);
+app.use(notfound)
+app.use(errorhandler);
 
 
 app.listen(PORT, () => {
